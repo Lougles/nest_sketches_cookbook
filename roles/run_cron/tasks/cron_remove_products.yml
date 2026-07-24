@@ -1,0 +1,3 @@
+- name: Run cron:remove-products manually
+  ansible.builtin.shell: /bin/bash /opt/scripts/remove-products.sh
+  tags: cron_remove_products

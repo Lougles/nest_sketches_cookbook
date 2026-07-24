@@ -1,0 +1,3 @@
+- name: Run cron:send-logs manually
+  ansible.builtin.shell: /bin/bash /opt/scripts/send-logs.sh
+  tags: cron_send_logs

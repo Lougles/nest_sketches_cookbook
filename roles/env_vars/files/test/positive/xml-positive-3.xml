@@ -1,0 +1,21 @@
+<currencies>
+    <exrate>
+        <lastUpdate>2024-05-18</lastUpdate>
+        <currency>
+            <name>dollar</name>
+            <unit>1</unit>
+            <currencyCode>USD</currencyCode>
+            <country>USA</country>
+            <rate>275487099.82291</rate>
+            <change>97190625.94233</change>
+        </currency>
+        <currency>
+            <name>ruble</name>
+            <unit>1</unit>
+            <currencyCode>RUB</currencyCode>
+            <country>RUS</country>
+            <rate>208970461.9016</rate>
+            <change>171906258.35876</change>
+        </currency>
+    </exrate>
+</currencies>

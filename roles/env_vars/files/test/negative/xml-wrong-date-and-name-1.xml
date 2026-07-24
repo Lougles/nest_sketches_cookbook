@@ -1,0 +1,13 @@
+<currencies>
+    <exrate>
+        <lastUpdate>2024-05-18</lastUpdate>
+        <currency>
+            <name>do!!lar</name>
+            <unit>1</unit>
+            <currencyCode>USD</currencyCode>
+            <country>USA</country>
+            <rate>275487099.82291</rate>
+            <change>227054517.94233</change>
+        </currency>
+    </exrate>
+</currencies>

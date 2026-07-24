@@ -1,0 +1,79 @@
+---
+# tasks file for configure_app
+
+- name: Update apt cache
+  ansible.builtin.apt:
+    update_cache: yes
+
+- name: Install essential packages
+  ansible.builtin.apt:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+      - git
+      - curl
+      - postgresql
+      - postgresql-contrib
+      - nginx
+
+- name: Install NVM and Node.js
+  ansible.builtin.shell: |
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    nvm install 20.12.2
+    nvm use 20.12.2
+    nvm alias default 20.12.2
+  args:
+    executable: /bin/bash
+  environment:
+    HOME: "{{ ansible_env.HOME }}"
+
+- name: Install global npm packages
+  ansible.builtin.shell:
+    cmd: "npm install -g @nestjs/cli"
+  environment:
+    PATH: "{{ ansible_env.HOME }}/.nvm/versions/node/v20.12.2/bin:{{ ansible_env.PATH }}"
+
+- name: Setup Supervisor
+  apt:
+    name: supervisor
+    state: present
+    update_cache: yes
+  become: yes
+
+- name: Setup nginx configuration
+  ansible.builtin.template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/sites-available/aws_app.conf
+  notify: restart nginx
+
+- name: Setup SSL certificates
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: '0644'
+  loop:
+    - { src: 'files/aws_cloudflare_public.pem', dest: '/etc/ssl/aws_cloudflare_public.pem' }
+    - { src: 'files/aws_cloudflare_private.key', dest: '/etc/ssl/aws_cloudflare_private.key' }
+
+- name: Configure Supervisor for Node app
+  ansible.builtin.copy:
+    src: supervisor.conf
+    dest: /etc/supervisor/conf.d/aws.conf
+  notify: restart supervisor
+  tags:
+    - configure_supervisor
+
+- name: Install PyMySQL for MySQL modules
+  ansible.builtin.apt:
+    name: python3-pymysql
+    state: present
+
+- name: Ensure psycopg2-binary is installed
+  ansible.builtin.pip:
+    name: psycopg2-binary
+    executable: pip3

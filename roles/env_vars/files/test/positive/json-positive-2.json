@@ -1,0 +1,27 @@
+{
+  "currencies": {
+    "exrate": [
+      {
+        "lastUpdate": "2024-05-16",
+        "currency": [
+          {
+            "name": "euro",
+            "unit": 1,
+            "currencyCode": "EUR",
+            "country": "DEU",
+            "rate": 622880927.92322,
+            "change": 479194516.3638
+          },
+          {
+            "name": "dollar",
+            "unit": 1,
+            "currencyCode": "USD",
+            "country": "USA",
+            "rate": 546887447.05663,
+            "change": 172899228.95686
+          }
+        ]
+      }
+    ]
+  }
+}

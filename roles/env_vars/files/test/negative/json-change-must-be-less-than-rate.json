@@ -1,0 +1,19 @@
+{
+  "currencies": {
+    "exrate": [
+      {
+        "lastUpdate": "2024-05-18",
+        "currency": [
+          {
+            "name": "dollar",
+            "unit": 1,
+            "currencyCode": "USD",
+            "country": "USA",
+            "rate": 175487099.82291,
+            "change": 227054517.94233
+          }
+        ]
+      }
+    ]
+  }
+}

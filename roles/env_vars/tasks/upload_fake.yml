@@ -1,0 +1,7 @@
+- name: Upload fake avatars for user seeder
+  copy:
+    src: fake
+    dest: "/var/www/{{ project_name }}/{{ folder_name }}/uploads/"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'

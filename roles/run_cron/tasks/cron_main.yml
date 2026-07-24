@@ -1,0 +1,3 @@
+- name: Run cron:main manually
+  ansible.builtin.shell: /bin/bash /opt/scripts/main.sh
+  tags: cron_main

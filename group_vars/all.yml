@@ -1,0 +1,6 @@
+project_name: test-backend-volodymyr-c
+folder_name: "shared"
+ansible_user: root
+db_name: pdp_db
+db_user: pdp_db_user
+db_password: pdp_db_password

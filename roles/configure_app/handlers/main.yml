@@ -1,0 +1,14 @@
+---
+# handlers file for configure_app
+
+- name: restart nginx
+  ansible.builtin.systemd:
+    name: nginx
+    state: restarted
+  listen: "restart nginx"
+
+- name: restart supervisor
+  ansible.builtin.systemd:
+    name: supervisor
+    state: restarted
+  listen: "restart supervisor"

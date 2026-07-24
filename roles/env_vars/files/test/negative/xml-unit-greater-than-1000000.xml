@@ -1,0 +1,13 @@
+<currencies>
+    <exrate>
+        <lastUpdate>2024-05-17</lastUpdate>
+        <currency>
+            <name>dollar</name>
+            <unit>1000001</unit>
+            <currencyCode>USD</currencyCode>
+            <country>UKR</country>
+            <rate>335928410.15566</rate>
+            <change>425490486.50639</change>
+        </currency>
+    </exrate>
+</currencies>

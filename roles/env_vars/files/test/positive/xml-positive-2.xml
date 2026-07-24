@@ -1,0 +1,21 @@
+<currencies>
+    <exrate>
+        <lastUpdate>2024-05-16</lastUpdate>
+        <currency>
+            <name>euro</name>
+            <unit>1</unit>
+            <currencyCode>EUR</currencyCode>
+            <country>DEU</country>
+            <rate>622880927.92322</rate>
+            <change>479194516.3638</change>
+        </currency>
+        <currency>
+            <name>dollar</name>
+            <unit>1</unit>
+            <currencyCode>USD</currencyCode>
+            <country>USA</country>
+            <rate>546887447.05663</rate>
+            <change>172899228.95686</change>
+        </currency>
+    </exrate>
+</currencies>

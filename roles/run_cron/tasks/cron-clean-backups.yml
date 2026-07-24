@@ -1,0 +1,3 @@
+- name: Run cron:main manually
+  ansible.builtin.shell: /bin/bash /opt/scripts/clean-backups.sh
+  tags: cron_clean_backups

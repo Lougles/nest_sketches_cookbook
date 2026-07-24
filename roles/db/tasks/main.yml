@@ -1,0 +1,28 @@
+- name: Ensure psycopg2-binary is installed
+  ansible.builtin.pip:
+    name: psycopg2-binary
+    executable: pip3
+
+- name: Ensure new DB user exists
+  community.postgresql.postgresql_user:
+    name: "{{ db_user }}"
+    password: "{{ db_password }}"
+  become: true
+  become_user: postgres
+
+- name: Create new database
+  community.postgresql.postgresql_db:
+    name: "{{ db_name }}"
+    owner: "{{ db_user }}"
+  become: true
+  become_user: postgres
+
+- name: Grant privileges on schema to user
+  community.postgresql.postgresql_privs:
+    db: "{{ db_name }}"
+    roles: "{{ db_user }}"
+    objs: public
+    type: schema
+    privs: ALL
+  become: true
+  become_user: postgres

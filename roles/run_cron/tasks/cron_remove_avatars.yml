@@ -1,0 +1,3 @@
+- name: Run cron:remove-avatars manually
+  ansible.builtin.shell: /bin/bash /opt/scripts/remove-avatars.sh
+  tags: cron_remove_avatars

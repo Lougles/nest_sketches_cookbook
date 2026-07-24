@@ -1,0 +1,29 @@
+# tasks file for mysql
+- name: Install MySQL server
+  ansible.builtin.apt:
+    name: mysql-server
+    state: present
+    update_cache: yes
+  become: yes
+
+- name: Ensure MySQL is running
+  ansible.builtin.service:
+    name: mysql
+    state: started
+    enabled: yes
+  become: yes
+
+- name: Ensure database for second app exists
+  community.mysql.mysql_db:
+    name: "aws"
+    state: present
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+
+- name: Ensure user for second app exists and has privileges on its DB
+  community.mysql.mysql_user:
+    name: "aws"
+    password: "aws"
+    host: "127.0.0.1"
+    priv: "aws.*:ALL"
+    state: present
+    login_unix_socket: /var/run/mysqld/mysqld.sock

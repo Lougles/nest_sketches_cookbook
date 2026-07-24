@@ -1,0 +1,3 @@
+---
+# defaults file for configure_app
+default_api: aws-ses-backend-volodymyr-c.abzdev2.com

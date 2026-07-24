@@ -1,0 +1,7 @@
+- name: Upload products images for products seeder
+  copy:
+    src: products
+    dest: "/var/www/{{ project_name }}/{{ folder_name }}/uploads/"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'

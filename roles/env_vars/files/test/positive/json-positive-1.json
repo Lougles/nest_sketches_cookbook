@@ -1,0 +1,27 @@
+{
+  "currencies": {
+    "exrate": [
+      {
+        "lastUpdate": "2024-05-18",
+        "currency": [
+          {
+            "name": "dollar",
+            "unit": 1,
+            "currencyCode": "USD",
+            "country": "USA",
+            "rate": 275487099.82291,
+            "change": 227054517.94233
+          },
+          {
+            "name": "ruble",
+            "unit": 1,
+            "currencyCode": "RUB",
+            "country": "RUS",
+            "rate": 208970461.9016,
+            "change": 171906258.35876
+          }
+        ]
+      }
+    ]
+  }
+}

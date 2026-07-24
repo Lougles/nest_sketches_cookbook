@@ -1,0 +1,21 @@
+---
+- name: Root
+  hosts: all
+  become:
+    true
+  become_method:
+    sudo
+  become_user:
+    root
+  roles:
+    - { role: 'core', when: ansible_system == 'Linux', tags: 'core' }
+    - { role: 'env_vars', when: ansible_system == 'Linux', tags: 'env_vars'}
+    - { role: 'db', when: ansible_system == 'Linux', tags: 'db'}
+    - { role: 'geerlingguy.redis', tags: 'geerlingguy.redis' }
+    - { role: 'configure_app', when: ansible_system == 'Linux', tags: 'configure_app' }
+    - { role: 'configure_aws_app', when: ansible_system == 'Linux', tags: 'configure_aws_app' }
+    - { role: 'cron', when: ansible_system == 'Linux', tags: 'cron'}
+    - { role: 'scripts', when: ansible_system == 'Linux', tags: 'scripts'}
+    - { role: 'alvistack.kube_ingress_nginx', tags: 'alvistack.kube_ingress_nginx' }
+    - { role: 'env_vars', when: ansible_system == 'Linux', tags: 'upload_products_images'}
+    - { role: 'env_vars', when: ansible_system == 'Linux', tags: 'upload_fake_images'}

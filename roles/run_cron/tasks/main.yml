@@ -1,0 +1,32 @@
+- include_tasks: cron-clean-backups.yml
+  tags: cron_clean_backups
+
+- include_tasks: cron_main.yml
+  tags: cron_main
+
+- include_tasks: cron_recover_db.yml
+  tags: cron_recover_db
+
+- include_tasks: cron_remove_avatars.yml
+  tags: cron_remove_avatars
+
+- include_tasks: cron_remove_files.yml
+  tags: cron_remove_files
+
+- include_tasks: cron_remove_products.yml
+  tags: cron_remove_products
+
+- include_tasks: cron_remove_subscription.yml
+  tags: cron_remove_subscription
+
+- include_tasks: cron_seed_products.yml
+  tags: cron_seed_products
+
+- include_tasks: cron_seed_subscription.yml
+  tags: cron_seed_subscription
+
+- include_tasks: cron_send_logs.yml
+  tags: cron_send_logs
+
+- include_tasks: cron_recover_db.yml
+  tags: cron_recover_db

@@ -1,0 +1,3 @@
+- name: Run cron:seed-products manually
+  ansible.builtin.shell: /bin/bash /opt/scripts/seed-products.sh
+  tags: cron_seed_products

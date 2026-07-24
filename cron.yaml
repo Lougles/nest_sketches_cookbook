@@ -1,0 +1,11 @@
+---
+- name: Root
+  hosts: all
+  become:
+    true
+  become_method:
+    sudo
+  become_user:
+    root
+  roles:
+    - { role: 'run_cron', when: ansible_system == 'Linux', tags: 'run_cron'}

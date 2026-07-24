@@ -1,0 +1,62 @@
+<currencies>
+<info>
+<name>Vova</name>
+</info>
+    <exrate>
+        <lastUpdate>2020-03-20</lastUpdate>
+        <currency>
+            <name>dollar</name>
+            <unit>1</unit>
+            <currencyCode>USD</currencyCode>
+            <country>USA</country>
+            <rate>4.11</rate>
+            <change>0.011</change>
+        </currency>
+        <currency>
+            <name>ruble</name>
+            <unit>1</unit>
+            <currencyCode>RUB</currencyCode>
+            <country>RUS</country>
+            <rate>4.22</rate>
+            <change>0.022</change>
+        </currency>
+    </exrate>
+    <exrate>
+        <lastUpdate>2020-03-19</lastUpdate>
+        <currency>
+            <name>dollar</name>
+            <unit>1</unit>
+            <currencyCode>UAH</currencyCode>
+            <country>UKR</country>
+            <rate>3.33</rate>
+            <change>1.033</change>
+        </currency>
+        <currency>
+            <name>dollar</name>
+            <unit>1</unit>
+            <currencyCode>USD</currencyCode>
+            <country>USA</country>
+            <rate>4.44</rate>
+            <change>0.044</change>
+        </currency>
+    </exrate>
+    <exrate>
+        <lastUpdate>2020-03-10</lastUpdate>
+        <currency>
+            <name>euro</name>
+            <unit>1</unit>
+            <currencyCode>EUR</currencyCode>
+            <country>DEU</country>
+            <rate>10.33</rate>
+            <change>2.033</change>
+        </currency>
+        <currency>
+            <name>dollar</name>
+            <unit>1</unit>
+            <currencyCode>USD</currencyCode>
+            <country>USA</country>
+            <rate>22.44</rate>
+            <change>2.044</change>
+        </currency>
+    </exrate>
+</currencies>

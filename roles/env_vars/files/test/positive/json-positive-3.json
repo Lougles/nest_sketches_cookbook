@@ -1,0 +1,69 @@
+{
+  "currencies": {
+    "exrate": [
+      {
+        "lastUpdate": "2020-11-20",
+        "currency": [
+          {
+            "name": "dollar",
+            "unit": 1,
+            "currencyCode": "USD",
+            "country": "USA",
+            "rate": 4.11,
+            "change": 0.011
+          },
+          {
+            "name": "ruble",
+            "unit": 1,
+            "currencyCode": "RUB",
+            "country": "RUS",
+            "rate": 4.22,
+            "change": 0.022
+          }
+        ]
+      },
+      {
+        "lastUpdate": "2020-03-19",
+        "currency": [
+          {
+            "name": "dollar",
+            "unit": 22,
+            "currencyCode": "UAH",
+            "country": "UKR",
+            "rate": 3.33,
+            "change": 1.033
+          },
+          {
+            "name": "dollar",
+            "unit": 12,
+            "currencyCode": "USD",
+            "country": "USA",
+            "rate": 4.44,
+            "change": 0.044
+          }
+        ]
+      },
+      {
+        "lastUpdate": "2020-03-10",
+        "currency": [
+          {
+            "name": "euro",
+            "unit": 3,
+            "currencyCode": "EUR",
+            "country": "DEU",
+            "rate": 4.73,
+            "change": 2.033
+          },
+          {
+            "name": "dollar",
+            "unit": 4,
+            "currencyCode": "USD",
+            "country": "USA",
+            "rate": 1.44,
+            "change": 1.044
+          }
+        ]
+      }
+    ]
+  }
+}

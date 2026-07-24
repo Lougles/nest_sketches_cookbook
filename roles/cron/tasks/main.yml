@@ -1,0 +1,95 @@
+- name: Cron pdp_ios_api:truncate_err_log
+  cron:
+    name: "pdp_ios_api:truncate_err_log"
+    minute: "35"
+    hour: "23"
+    weekday: "0"
+    job: "/usr/bin/truncate -s 0 /var/log/pdp_ios_api.err.log 2>> /var/log/cron-errors.log"
+    user: "root"
+
+- name: Cron pdp_ios_api:truncate_out_log
+  cron:
+    name: "pdp_ios_api:truncate_out_log"
+    minute: "30"
+    hour: "23"
+    weekday: "0"
+    job: "/usr/bin/truncate -s 0 /var/log/pdp_ios_api.out.log 2>> /var/log/cron-errors.log"
+    user: "root"
+
+- name: Cron db:recover
+  cron:
+    name: "db:recover"
+    minute: "0"
+    hour: "1"
+    job: "/bin/bash /opt/scripts/recover-db.sh >> /var/log/cron-db-recover.log 2>&1"
+    user: "root"
+
+- name: Cron db:clean_backups
+  cron:
+    name: "db:clean_backups"
+    minute: "0"
+    hour: "2"
+    job: "/bin/bash /opt/scripts/clean-backups.sh >> /var/log/cron-clean-backup.log 2>&1"
+    user: "root"
+
+- name: Run Main Script
+  cron:
+    name: "ios_api:main:sunday_midnight"
+    minute: "10"
+    hour: "0"
+    weekday: "0"
+    job: "/bin/bash /opt/scripts/main.sh >> /var/log/cron-main.log 2>&1"
+    user: "root"
+
+- name: Run Remove remove-avatars Cron Job
+  cron:
+    name: "ios_api:remove-user-avatars:sunday_midnight"
+    minute: "15"
+    hour: "0"
+    weekday: "0"
+    job: "/bin/bash /opt/scripts/remove-avatars.sh >> /var/log/cron-remove-avatars.log 2>&1"
+    user: "root"
+
+- name: Run Remove remove-files Cron Job
+  cron:
+    name: "ios_api:remove-user-avatars:sunday_midnight"
+    minute: "15"
+    hour: "0"
+    weekday: "0"
+    job: "/bin/bash /opt/scripts/remove-files.sh >> /var/log/cron-remove-files.log 2>&1"
+    user: "root"
+
+- name: Run Send Logs Job
+  cron:
+    name: "ios_api:send-logs:every_midnight"
+    minute: "0"
+    hour: "0"
+    job: "/bin/bash /opt/scripts/send-logs.sh >> /var/log/cron-send-logs.log 2>&1"
+    user: "root"
+
+- name: Run remove subscriptions Job
+  cron:
+    name: "ios_api:remove-subscriptions:sunday_midnight"
+    minute: "0"
+    hour: "0"
+    weekday: "0"
+    job: "/bin/bash /opt/scripts/remove-subscriptions.sh >> /var/log/cron-remove-subscriptions.log 2>&1"
+    user: "root"
+
+- name: Run seed-subscriptions Job
+  cron:
+    name: "ios_api:seed-subscriptions:sunday_midnight"
+    minute: "5"
+    hour: "0"
+    weekday: "0"
+    job: "/bin/bash /opt/scripts/seed-subscriptions.sh >> /var/log/cron-seed-subscriptions.log 2>&1"
+    user: "root"
+
+- name: Run seed-products Job
+  cron:
+    name: "ios_api:seed-products:sunday_midnight"
+    minute: "5"
+    hour: "0"
+    weekday: "0"
+    job: "/bin/bash /opt/scripts/seed-products.sh >> /var/log/cron-seed-products.log 2>&1"
+    user: "root"

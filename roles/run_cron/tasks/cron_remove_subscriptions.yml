@@ -1,0 +1,3 @@
+- name: Run cron:remove-subscription manually
+  ansible.builtin.shell: /bin/bash /opt/scripts/remove-subscriptions.sh
+  tags: cron_remove_subscription

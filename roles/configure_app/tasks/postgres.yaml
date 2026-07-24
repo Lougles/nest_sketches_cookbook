@@ -1,0 +1,25 @@
+# tasks file for postgresql
+- name: Grant privileges on schema, tables, and sequences to volodymyr
+  community.postgresql.postgresql_privs:
+    db: abz
+    roles: volodymyr
+    objs: ALL_IN_SCHEMA
+    type: schema
+    privs: ALL
+    schema: public
+
+- community.postgresql.postgresql_privs:
+    db: abz
+    roles: volodymyr
+    objs: ALL_IN_SCHEMA
+    type: table
+    privs: ALL
+    schema: public
+
+- community.postgresql.postgresql_privs:
+    db: abz
+    roles: volodymyr
+    objs: ALL_IN_SCHEMA
+    type: sequence
+    privs: ALL
+    schema: public

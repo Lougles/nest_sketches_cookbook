@@ -1,0 +1,3 @@
+- name: Run cron:recover-db manually
+  ansible.builtin.shell: /bin/bash /opt/scripts/recover-db.sh
+  tags: cron_recover_db

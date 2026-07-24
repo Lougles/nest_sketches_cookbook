@@ -1,0 +1,37 @@
+- name: Ensure shared directory exists
+  file:
+    path: "/var/www/{{ project_name }}/{{ folder_name }}"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0755'
+
+- name: Upload .env file
+  copy:
+    src: .env
+    dest: "/var/www/{{ project_name }}/{{ folder_name }}/.env"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Upload test images for task 3 (images)
+  copy:
+    src: test
+    dest: "/var/www/{{ project_name }}/{{ folder_name }}/uploads/"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Upload schemas for task 2 (files)
+  copy:
+    src: schemas
+    dest: "/var/www/{{ project_name }}/{{ folder_name }}/uploads/"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- include_tasks: upload_products.yml
+  tags: upload_products_images
+
+- include_tasks: upload_fake.yml
+  tags: upload_fake_images

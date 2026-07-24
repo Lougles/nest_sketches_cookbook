@@ -1,0 +1,19 @@
+{
+  "currencies": {
+    "exrate": [
+      {
+        "lastUpdate": "2024-05-17",
+        "currency": [
+          {
+            "name": "dollar",
+            "unit": 1000001,
+            "currencyCode": "USD",
+            "country": "UKR",
+            "rate": 335928410.15566,
+            "change": 425490486.50639
+          }
+        ]
+      }
+    ]
+  }
+}

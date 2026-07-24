@@ -1,0 +1,79 @@
+- name: Ensure scripts directory exists
+  file:
+    path: "/opt/scripts"
+    state: directory
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0755'
+
+- name: Upload clean backups script file
+  template:
+    src: "{{ role_path }}/files/clean-backups.sh"
+    dest: "/opt/scripts/clean-backups.sh"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Upload main script file
+  template:
+    src: "{{ role_path }}/files/main.sh"
+    dest: "/opt/scripts/main.sh"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Upload recover-db script file
+  template:
+    src: "{{ role_path }}/files/recover-db.sh"
+    dest: "/opt/scripts/recover-db.sh"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Upload remove-avatars script file
+  template:
+    src: "{{ role_path }}/files/remove-avatars.sh"
+    dest: "/opt/scripts/remove-avatars.sh"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Upload remove-files script file
+  template:
+    src: "{{ role_path }}/files/remove-files.sh"
+    dest: "/opt/scripts/remove-files.sh"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Upload remove-subscriptions script file
+  template:
+    src: "{{ role_path }}/files/remove-subscriptions.sh"
+    dest: "/opt/scripts/remove-subscriptions.sh"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Upload seed-products script file
+  template:
+    src: "{{ role_path }}/files/seed-products.sh"
+    dest: "/opt/scripts/seed-products.sh"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Upload seed-subscriptions script file
+  template:
+    src: "{{ role_path }}/files/seed-subscriptions.sh"
+    dest: "/opt/scripts/seed-subscriptions.sh"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'
+
+- name: Upload send-logs script file
+  template:
+    src: "{{ role_path }}/files/send-logs.sh"
+    dest: "/opt/scripts/send-logs.sh"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: '0600'

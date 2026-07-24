@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "currencies": {
+      "type": "object",
+      "properties": {
+        "exrate": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "lastUpdate": {
+                "type": "string",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                "errorMessage": {
+                  "pattern": "The date format should be YYYY-MM-DD"
+                }
+              },
+              "currency": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z ]+$",
+                      "minLength": 2,
+                      "maxLength": 60,
+                      "errorMessage": {
+                        "minLength": "Name must be at least 2 characters long",
+                        "maxLength": "Name must be no longer than 60 characters",
+                        "pattern": "Name must contain only English letters"
+                      }
+                    },
+                    "unit": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 1000000,
+                      "errorMessage": {
+                        "minimum": "Unit must be a positive number",
+                        "maximum": "Unit must be less than 1000000"
+                      }
+                    },
+                    "currencyCode": {
+                      "type": "string",
+                      "pattern": "^[A-Z]{3}$",
+                      "errorMessage": {
+                        "pattern": "currencyCode must be only 3 English uppercase letters with ISO 4217"
+                      }
+                    },
+                    "country": {
+                      "type": "string",
+                      "pattern": "^[A-Z]{3}$",
+                      "errorMessage": {
+                        "pattern": "The country must be only 3 English uppercase letters with ISO 3166"
+                      }
+                    },
+                    "rate": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1000000000,
+                      "errorMessage": {
+                        "minimum": "Rate must be a positive number",
+                        "maximum": "Rate must be less than 1000000000"
+                      }
+                    },
+                    "change": {
+                      "type": "number",
+                      "minimum": 0,
+                      "maximum": 1000000000,
+                      "errorMessage": {
+                        "minimum": "Change must be a positive number"
+                      }
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "unit",
+                    "currencyCode",
+                    "country",
+                    "rate",
+                    "change"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "lastUpdate",
+              "currency"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "exrate"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "currencies"
+  ],
+  "additionalProperties": false
+}
