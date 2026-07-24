@@ -47,4 +47,4 @@ Thumbs.db
 *.flv
 *.mov
 *.wmv
-
+roles/env_vars/files/.env
