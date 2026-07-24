@@ -6,10 +6,10 @@
     group: "{{ ansible_user }}"
     mode: '0755'
 
-- name: Upload .env file
+- name: Upload .env.example file
   copy:
-    src: .env
-    dest: "/var/www/{{ project_name }}/{{ folder_name }}/.env"
+    src: .env.example
+    dest: "/var/www/{{ project_name }}/{{ folder_name }}/.env.example"
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
     mode: '0600'
